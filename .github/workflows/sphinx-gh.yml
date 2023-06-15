@@ -33,7 +33,7 @@ jobs:
       - name: Build with Sphinx
         run: |
             pip install -r requirements.txt 
-            sphinx-build -b html documents/ docs/_site       
+            sphinx-build -b html documents/ _site       
             pwd
             ls -lh
       - name: Upload artifact
