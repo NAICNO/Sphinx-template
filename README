@@ -1,1 +1,8 @@
 # Template to use when creating gitpages
+
+## Create the conda environement
+ENV_PATH=<where to place the conda env>
+conda create python=3.9 --prefix=$ENV_PATH/sphinx-template -y
+
+conda activate /home/sabryr/miniconda3/env/sphinx-template
+pip install -r requirements.txt
