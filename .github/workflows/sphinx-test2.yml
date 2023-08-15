@@ -39,6 +39,8 @@ jobs:
           git config --global user.email "naic-bot@example.com"
           git config --global user.name "naic-bot"
           touch .nojekyll
+          mkdir docs
+          mv _build/html/* docs/
           git add -A
           git commit -m "generated using sphinx-build"
 
