@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
@@ -31,17 +31,17 @@ jobs:
           mkdir docs
           sphinx-build -b html documents/ _build/html
 
-    - name: Commit and push to gh-pages
-      run: |-
-        git config --global user.email "naic-bot@example.com"
-        git config --global user.name "naic-bot"
-        git checkout --orphan gh-pages
-        git rm --cached -r .
-        mv CNAME _build ..
-        rm -rf *
-        mv ../_build/* .
-        mv ../CNAME .
-        touch .nojekyll
-        git add .
-        git commit -m "generated using sphinx-build"
-        git push --set-upstream origin gh-pages --force
+      - name: Commit and push to gh-pages
+        run: |-
+          git config --global user.email "naic-bot@example.com"
+          git config --global user.name "naic-bot"
+          git checkout --orphan gh-pages
+          git rm --cached -r .
+          mv CNAME _build ..
+          rm -rf *
+          mv ../_build/* .
+          mv ../CNAME .
+          touch .nojekyll
+          git add .
+          git commit -m "generated using sphinx-build"
+          git push --set-upstream origin gh-pages --force
