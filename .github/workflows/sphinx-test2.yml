@@ -39,9 +39,7 @@ jobs:
           git config --global user.email "naic-bot@example.com"
           git config --global user.name "naic-bot"
           touch .nojekyll
-          pwd
-          ls -lh
-          mv _build/* .
+          mv _build/html docs
           git add -A
           git commit -m "generated using sphinx-build"
 
@@ -51,5 +49,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           force: true
-          directory: html/*
+          directory: docs
          
