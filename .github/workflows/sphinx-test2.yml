@@ -40,7 +40,6 @@ jobs:
           mv CNAME _build ..
           rm -rf *
           mv ../_build/* .
-          mv ../CNAME .
           touch .nojekyll
           git add .
           git commit -m "generated using sphinx-build"
