@@ -40,6 +40,7 @@ jobs:
           git config --global user.name "naic-bot"
           touch .nojekyll
           mv _build/html docs
+          touch docs/.nojekyll
           git add -A
           git commit -m "generated using sphinx-build"
 
