@@ -31,6 +31,8 @@ jobs:
       - name: Build documentation
         run: |
           sphinx-build -b html documents/ _build/html
+          pwd
+          ls -lh          
 
       - name: Commit and push to gh-pages
         run: |-
@@ -46,5 +48,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           branch: gh-pages
           force: true
-          directory: build/html
+          directory: _build/html
          
